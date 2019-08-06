@@ -1,0 +1,84 @@
+
+@media screen and (min-width:256px) {
+  #carousel{
+    width:100%;background-color:red;
+    .carousel_main{
+      position:relative;
+      width:100%; background-color:yellow;
+      overflow: hidden;
+      .carousel_slider{
+        position:absolute;width:70px;height:74px;
+        top:50%;margin-top:-37px;
+        display: none;z-index:5;
+      }
+      .carousel_left{
+        left:40px;
+        background: url(../../../public/img/indexCarousel/slider-prev.png) no-repeat center center;
+        background-size:cover ;
+      }
+      .carousel_right{
+        right:40px;
+        background: url(../../../public/img/indexCarousel/slider-next.png) no-repeat center center;
+        background-size:cover ;
+      }
+      .carousel_ul{
+        background-color:blue;
+        width:600%;
+        .carousel_li{
+          position:relative;
+          background-color:#aaa; 
+          transition:0.3s ease-out;
+          float:left;
+          width:16.666%;
+          background-image: url(../../../public/img/indexCarousel/top-kv-11-sp.jpg);
+          background-repeat:no-repeat;
+          background-size:100% auto;
+          &:before{
+            content:"";
+            display: block;
+            padding-top:153%;
+          }
+          a{
+            position:absolute;z-index:3;
+            top:0;left:0;width:100%;height:100%;
+          }
+          a{
+            position:absolute;
+            top:0px;left:0;
+            width:100%;height:100%;
+          }
+        }
+      }
+    }
+
+  }
+}
+
+@media screen and (min-width:600px) {
+  #carousel{
+    .carousel_main{
+      .carousel_slider{
+        display:block;
+      }
+      .carousel_left{
+      }
+      .carousel_right{
+      }
+      .carousel_ul{
+        .carousel_li{
+          height:500px;
+          background-image: url(../../../public/img/indexCarousel/top-kv-11.jpg);
+          background-position:center center ;
+          background-size:cover;
+          // &:before{
+          //   content:"";
+          //   padding:0px;
+          // }
+        }
+      }
+    }
+  }
+}
+
+
+

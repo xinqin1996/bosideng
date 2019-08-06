@@ -1,0 +1,108 @@
+SET NAMES UTF8;
+DROP DATABASE IF EXISTS bsd;
+CREATE DATABASE bsd CHARSET=UTF8;
+USE bsd;
+
+/** 用户信息 **/
+/** 保存了uname,upwd,phone  **/
+CREATE TABLE bsd_user(
+  uid INT PRIMARY KEY AUTO_INCREMENT,
+  uname VARCHAR(32),
+  upwd VARCHAR(32),
+  phone VARCHAR(16)
+);
+
+/** 商品的信息 id,名字，价格，规格，颜色 **/
+CREATE TABLE bsd_product(
+  pid INT PRIMARY KEY AUTO_INCREMENT,  #商品编号(1----)
+  family_id INT,             #商品家族  11代表了女装都市  12代表了女装运动   21男都市 22男运动  31童装普通
+  lname VARCHAR(128) ,       #名字
+  price DECIMAL(10,2),       #价格
+  color VARCHAR(128),         #颜色
+  spec VARCHAR(128),          #规格
+  pic_on VARCHAR(128),       #pic_on
+  pic_hover VARCHAR(128)    #pic_hover
+);
+
+CREATE TABLE bsd_product_family(
+  fid INT PRIMARY KEY AUTO_INCREMENT,    
+  family_id INT,             
+  fname VARCHAR(32)
+);
+ 
+/**首页动画无限滚动商品图片**/
+CREATE TABLE bsd_index_animation(
+  cid INT PRIMARY KEY AUTO_INCREMENT,
+  img VARCHAR(128)
+);
+
+USE bsd;
+CREATE TABLE bsd_cart(
+  cid INT PRIMARY KEY AUTO_INCREMENT,
+  uid INT,            #1 用户编号  ***   
+  pid INT,            #2 商品编号 
+  family_id INT,      #家族编号
+  -- onlyid INT,          #2 only编号  *** （每个商品的单独编号）
+  lname VARCHAR(128),  #3 名字
+  price DECIMAL(10,2), #4 价格
+  spec VARCHAR(128),   #5 规格
+  color VARCHAR(128),  #6 颜色
+  count INT,            #7 数量   
+  pic_hover VARCHAR(128) #8 图片路径  
+);
+
+/*******************/
+/******数据导入******/
+/*******************/
+INSERT INTO bsd_user VALUES
+(NULL,"xq",md5('123456'),17816899467),
+(NULL,"ls",md5('123456'),17816899455),
+(NULL,"tom",md5('123456'),17816899438);
+
+-- 11代表了女装都市  12代表了女装运动   21男都市 22男运动  31童装普通
+INSERT INTO bsd_product_family VALUES
+(NULL,11,'女装都市'),
+(NULL,12,'女装运动'),
+(NULL,21,'男装都市'),
+(NULL,22,'男装运动'),
+(NULL,31,'童装普通');
+
+
+INSERT INTO bsd_product VALUES
+(NULL,11,"B90132001",335,'深红-深绿-浅蓝-灰色-黑色','165/84A-170/88A-175/92A-180/96A-185/100A',"img/lady/5bbfe9d1e663f.jpg","img/lady/5bbfe28168c57.jpg"),
+(NULL,11,"B90132002",485,'深红-深绿-浅蓝','165/84A-170/88A-175/92A-180/96A-185/100A',"img/lady/5bbfe9a9d2170.jpg","img/lady/5bbfe26c5db54.jpg"),
+(NULL,11,"B90132003",335,'深红-深绿-浅蓝-黑色','165/84A-170/88A-175/92A-180/96A-185/100A',"img/lady/5bbfe9ff73ad2.jpg","img/lady/5bbfe2a30600c.jpg"),
+(NULL,11,"B90132004",455,'深红-深绿-灰色-黑色','165/84A-170/88A-175/92A-180/96A-185/100A',"img/lady/5bbfeb0ccf061.jpg","img/lady/5bbfe353e722c.jpg"),
+(NULL,11,"B90132005",585,'深红-深绿-浅蓝-灰色','165/84A-170/88A-175/92A-180/96A-185/100A',"img/lady/5bbfea906b129.jpg","img/lady/5bbfe3265df56.jpg"),
+(NULL,11,"B90132006",635,'深红-浅蓝-灰色-黑色','165/84A-170/88A-175/92A-180/96A-185/100A',"img/lady/5bbfea303c150.jpg","img/lady/5bbfe2bb18796.jpg"),
+(NULL,11,"B90133011",375,'深绿-浅蓝-灰色-黑色','165/84A-170/88A-175/92A-180/96A-185/100A',"img/lady/5bbfe984a78f4.jpg","img/lady/5bbfe25fb075e.jpg"),
+(NULL,12,"B90133012",635,'深红-深绿-浅蓝-黑色','165/84A-170/88A-175/92A-180/96A-185/100A',"img/lady/5bbfe8fd10a9e.jpg","img/lady/5bbfe8fd10a9e.jpg"),
+(NULL,12,"B90133013",335,'深红-浅蓝-灰色-黑色','165/84A-170/88A-175/92A-180/96A-185/100A',"img/lady/5bbfe95e73fa8.jpg","img/lady/5bbfe95e73fa8.jpg"),
+(NULL,12,"B90133014",735,'深红-深绿-浅蓝-灰色-黑色','165/84A-170/88A-175/92A-180/96A-185/100A',"img/lady/5bbfebed8dca7.jpg","img/lady/5bbfebed8dca7.jpg"),
+(NULL,12,"B90133015",585,'深红-深绿-浅蓝-灰色-黑色','165/84A-170/88A-175/92A-180/96A-185/100A',"img/lady/5bbfea906b129.jpg","img/lady/5bbfe3265df56.jpg"),
+(NULL,12,"B90133016",635,'浅蓝-灰色-黑色','165/84A-170/88A-175/92A-180/96A-185/100A',"img/lady/5bbfea303c150.jpg","img/lady/5bbfe2bb18796.jpg"),
+(NULL,12,"B90134021",635,'深红-深绿-浅蓝-灰色-黑色','165/84A-170/88A-175/92A-180/96A-185/100A',"img/lady/5bbfe984a78f4.jpg","img/lady/5bbfe25fb075e.jpg"),
+(NULL,12,"B90134022",455,'深红-深绿-灰色-黑色','165/84A-170/88A-175/92A-180/96A-185/100A',"img/lady/5bbfe9a9d2170.jpg","img/lady/5bbfe26c5db54.jpg"),
+(NULL,12,"B90134023",495,'深红-深绿-浅蓝-灰色-黑色','165/84A-170/88A-175/92A-180/96A-185/100A',"img/lady/5bbfe9ff73ad2.jpg","img/lady/5bbfe2a30600c.jpg"),
+(NULL,12,"B90134024",285,'深红-深绿-浅蓝-灰色-黑色','165/84A-170/88A-175/92A-180/96A-185/100A',"img/lady/5bbfe984a78f4.jpg","img/lady/5bbfe25fb075e.jpg"),
+(NULL,12,"B90134025",445,'深红-深绿-浅蓝-灰色-黑色','165/84A-170/88A-175/92A-180/96A-185/100A',"img/lady/5bbfe8fd10a9e.jpg","img/lady/5bbfe8fd10a9e.jpg"),
+(NULL,12,"B90134026",535,'深红-深绿-浅蓝-灰色-黑色','165/84A-170/88A-175/92A-180/96A-185/100A',"img/lady/5bbfe9d1e663f.jpg","img/lady/5bbfe28168c57.jpg"),
+(NULL,21,"B90134023",495,'深红-深绿-浅蓝-灰色-黑色','165/84A-170/88A-175/92A-180/96A-185/100A',"img/lady/5bbfe9ff73ad2.jpg","img/lady/5bbfe2a30600c.jpg"),
+(NULL,21,"B90134024",285,'深红-深绿-浅蓝-灰色-黑色','165/84A-170/88A-175/92A-180/96A-185/100A',"img/lady/5bbfe984a78f4.jpg","img/lady/5bbfe25fb075e.jpg"),
+(NULL,22,"B90134025",445,'深红-深绿-浅蓝-灰色-黑色','165/84A-170/88A-175/92A-180/96A-185/100A',"img/lady/5bbfe8fd10a9e.jpg","img/lady/5bbfe8fd10a9e.jpg"),
+(NULL,22,"B90134026",535,'深红-深绿-浅蓝-灰色-黑色','165/84A-170/88A-175/92A-180/96A-185/100A',"img/lady/5bbfe9d1e663f.jpg","img/lady/5bbfe28168c57.jpg"),
+(NULL,31,"B90134025",445,'深红-深绿-浅蓝-灰色-黑色','165/84A-170/88A-175/92A-180/96A-185/100A',"img/lady/5bbfe8fd10a9e.jpg","img/lady/5bbfe8fd10a9e.jpg"),
+(NULL,31,"B90134026",535,'深红-深绿-浅蓝-灰色-黑色','165/84A-170/88A-175/92A-180/96A-185/100A',"img/lady/5bbfe9d1e663f.jpg","img/lady/5bbfe28168c57.jpg");
+
+/**首页动画无限滚动商品图片**/
+INSERT INTO bsd_index_animation VALUES
+(NULL,'img/index/5ac155b845651.jpg'),
+(NULL,'img/index/5ac155ae48f43.jpg'),
+(NULL,'img/index/5ac155a56f386.jpg'),
+(NULL,'img/index/5ac192cf66876.jpg'),
+(NULL,'img/index/5ac1556d078ce.jpg'),
+(NULL,'img/index/5ac1559ca6313.jpg'),
+(NULL,'img/index/5ac15576e1983.jpg'),
+(NULL,'img/index/5ac15589c8ea3.jpg'),
+(NULL,'img/index/5ac155805aa10.jpg');
+

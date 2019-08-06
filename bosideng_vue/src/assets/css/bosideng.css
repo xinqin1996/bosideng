@@ -1,0 +1,9 @@
+@media screen and (min-width: 256px) {
+  .d_sm256_none {
+    display: none; } }
+
+@media screen and (min-width: 960px) {
+  .d_md960_block {
+    display: block; }
+  .d_md960_none {
+    display: none; } }

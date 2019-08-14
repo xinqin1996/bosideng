@@ -3,7 +3,7 @@
         <nav-login></nav-login>
         <div id="car_header">
             <div class="header_block">
-                <img src="../../public/img/shoppingCar/logo.png" alt="">
+                <img src="../../public/img/shoppingCar/logo.png" alt="" @click="change">
                 <span>购物车</span>
             </div>
             <div class="header_search">
@@ -176,6 +176,11 @@
             }
           )
         },
+        change(e){
+          return;
+          console.log(require("../../public/img/shoppingCar/anli.jpg"));
+        },
+
         //函数动态改变   可以使用，但是不用
               // total_total:0,
               // total_num:0,

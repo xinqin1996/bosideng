@@ -1,6 +1,8 @@
 <template>
 	
     <div id="index">
+        <my-header></my-header>
+        <carousel></carousel>
         <nav-login></nav-login>
         <div class="index_block1"></div>
         <div class="index_block2">

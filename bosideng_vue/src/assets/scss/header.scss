@@ -2,7 +2,7 @@
   font-family: 'PingFangSC-Light', 'PingFang SC', 'Helvetica Neue', 'Helvetica', 'STHeitiSC-Light', 'Arial', 'Microsoft Yahei', 'Noto Sans CJK SC', 'Noto Sans S Chinese', sans-serif;
   width:100%;
   position:relative;
-  background-color:#eee;
+  background-color:#fff;
   //background-color:#fff;
   .header_md{
     width: 100%;
@@ -187,5 +187,18 @@
     .header_nav{
       width:820px;
     }
+  }
+}
+
+.header_sm_menu.d-none{
+  display:none !important;
+}
+.header_sm_menu{
+  background-color:#fff;
+}
+
+@media screen and (min-width:960px) {
+  .d_md960_none{
+    display:none !important;
   }
 }

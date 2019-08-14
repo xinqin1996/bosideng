@@ -4,22 +4,22 @@
           <!-- >500显示-->
           <div class="header_sm d_md960_none">
               <!-- 使用开关控制，nav的开启和关闭-->
-              <div class="header_sm_nav active"></div>
+              <div class="header_sm_nav" :class="{active:isActive}" @click="changeIsActive"></div>
               <a  class="header_sm_img" href="javascript:;"></a>
-              <div class="header_sm_menu">
+              <div class="header_sm_menu" :class="{'d-none':!isActive}">
                   <ul class="menu_ul">
                       <li class="menu_li">
                           <a  class="active" href="javascript:;">首页</a>
                       </li>
-                      <li class="menu_li li_abs active">
+                      <li class="menu_li li_abs" :class="{active:liIsActive[0]}" @click="changeLi" data-i=0>
                           <span class="">品牌</span>
                           <ul class="menu_li_ul">
                               <li class="menu_li_item"><a href="javascript:;">品牌故事</a></li>
                               <li class="menu_li_item"><a href="javascript:;">品牌动态</a></li>
                           </ul>
                       </li>
-                      <li  class="menu_li">
-                          <span>首页</span>
+                      <li  class="menu_li" :class="{active:liIsActive[1]}"  @click="changeLi" data-i=1>
+                          <span>商品</span>
                           <ul class="menu_li_ul">
                               <li class="menu_li_item"><a href="javascript:;">女装</a></li>
                               <li class="menu_li_item"><a href="javascript:;">男装</a></li>
@@ -107,7 +107,17 @@
 </template>
 <script>
 export default {
-  
+  data(){
+    return{     //把所有的true防砸数组里，通过data-id俩获取对印的下标
+      isActive:false,
+      liIsActive:[false,false],
+    }
+  },
+  methods:{
+    changeIsActive(){
+      this.isActive = (this.isActive==false) ? true:false;
+    }
+  },
 }
 </script>
 <style>

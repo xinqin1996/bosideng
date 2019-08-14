@@ -21,16 +21,25 @@
         background: url(../../../public/img/indexCarousel/slider-next.png) no-repeat center center;
         background-size:cover ;
       }
+      .carousel_ul.hasTransition{
+        transition:0.5s linear;
+      }
       .carousel_ul{
         background-color:blue;
         width:600%;
         .carousel_li{
+          &:nth-child(1){background-image: url(http://127.0.0.1:5050/img/indexCarousel/top-kv-11-sp.jpg)}
+          &:nth-child(2){background-image: url(http://127.0.0.1:5050/img/indexCarousel/top-kv-12-sp.jpg)}
+          &:nth-child(3){background-image: url(http://127.0.0.1:5050/img/indexCarousel/top-kv-13-sp.jpg)}
+          &:nth-child(4){background-image: url(http://127.0.0.1:5050/img/indexCarousel/top-kv-14-sp.jpg)}
+          &:nth-child(5){background-image: url(http://127.0.0.1:5050/img/indexCarousel/top-kv-15-sp.jpg)}
+          &:nth-child(6){background-image: url(http://127.0.0.1:5050/img/indexCarousel/top-kv-11-sp.jpg)}
           position:relative;
           background-color:#aaa; 
           transition:0.3s ease-out;
           float:left;
           width:16.666%;
-          background-image: url(../../../public/img/indexCarousel/top-kv-11-sp.jpg);
+          // background-image: url(../../../public/img/indexCarousel/top-kv-11-sp.jpg);
           background-repeat:no-repeat;
           background-size:100% auto;
           &:before{
@@ -67,7 +76,13 @@
       .carousel_ul{
         .carousel_li{
           height:500px;
-          background-image: url(../../../public/img/indexCarousel/top-kv-11.jpg);
+          &:nth-child(1){background-image: url(http://127.0.0.1:5050/img/indexCarousel/top-kv-11.jpg)}
+          &:nth-child(2){background-image: url(http://127.0.0.1:5050/img/indexCarousel/top-kv-12.jpg)}
+          &:nth-child(3){background-image: url(http://127.0.0.1:5050/img/indexCarousel/top-kv-13.jpg)}
+          &:nth-child(4){background-image: url(http://127.0.0.1:5050/img/indexCarousel/top-kv-14.jpg)}
+          &:nth-child(5){background-image: url(http://127.0.0.1:5050/img/indexCarousel/top-kv-15.jpg)}
+          &:nth-child(6){background-image: url(http://127.0.0.1:5050/img/indexCarousel/top-kv-11.jpg)}
+          // background-image: url(../../../public/img/indexCarousel/top-kv-11.jpg);
           background-position:center center ;
           background-size:cover;
           // &:before{

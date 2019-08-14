@@ -23,6 +23,8 @@
         right: 40px;
         background: url(../../../public/img/indexCarousel/slider-next.png) no-repeat center center;
         background-size: cover; }
+      #carousel .carousel_main .carousel_ul.hasTransition {
+        transition: 0.5s linear; }
       #carousel .carousel_main .carousel_ul {
         background-color: blue;
         width: 600%; }
@@ -32,9 +34,20 @@
           transition: 0.3s ease-out;
           float: left;
           width: 16.666%;
-          background-image: url(../../../public/img/indexCarousel/top-kv-11-sp.jpg);
           background-repeat: no-repeat;
           background-size: 100% auto; }
+          #carousel .carousel_main .carousel_ul .carousel_li:nth-child(1) {
+            background-image: url(http://127.0.0.1:5050/img/indexCarousel/top-kv-11-sp.jpg); }
+          #carousel .carousel_main .carousel_ul .carousel_li:nth-child(2) {
+            background-image: url(http://127.0.0.1:5050/img/indexCarousel/top-kv-12-sp.jpg); }
+          #carousel .carousel_main .carousel_ul .carousel_li:nth-child(3) {
+            background-image: url(http://127.0.0.1:5050/img/indexCarousel/top-kv-13-sp.jpg); }
+          #carousel .carousel_main .carousel_ul .carousel_li:nth-child(4) {
+            background-image: url(http://127.0.0.1:5050/img/indexCarousel/top-kv-14-sp.jpg); }
+          #carousel .carousel_main .carousel_ul .carousel_li:nth-child(5) {
+            background-image: url(http://127.0.0.1:5050/img/indexCarousel/top-kv-15-sp.jpg); }
+          #carousel .carousel_main .carousel_ul .carousel_li:nth-child(6) {
+            background-image: url(http://127.0.0.1:5050/img/indexCarousel/top-kv-11-sp.jpg); }
           #carousel .carousel_main .carousel_ul .carousel_li:before {
             content: "";
             display: block;
@@ -58,6 +71,17 @@
     display: block; }
   #carousel .carousel_main .carousel_ul .carousel_li {
     height: 500px;
-    background-image: url(../../../public/img/indexCarousel/top-kv-11.jpg);
     background-position: center center;
-    background-size: cover; } }
+    background-size: cover; }
+    #carousel .carousel_main .carousel_ul .carousel_li:nth-child(1) {
+      background-image: url(http://127.0.0.1:5050/img/indexCarousel/top-kv-11.jpg); }
+    #carousel .carousel_main .carousel_ul .carousel_li:nth-child(2) {
+      background-image: url(http://127.0.0.1:5050/img/indexCarousel/top-kv-12.jpg); }
+    #carousel .carousel_main .carousel_ul .carousel_li:nth-child(3) {
+      background-image: url(http://127.0.0.1:5050/img/indexCarousel/top-kv-13.jpg); }
+    #carousel .carousel_main .carousel_ul .carousel_li:nth-child(4) {
+      background-image: url(http://127.0.0.1:5050/img/indexCarousel/top-kv-14.jpg); }
+    #carousel .carousel_main .carousel_ul .carousel_li:nth-child(5) {
+      background-image: url(http://127.0.0.1:5050/img/indexCarousel/top-kv-15.jpg); }
+    #carousel .carousel_main .carousel_ul .carousel_li:nth-child(6) {
+      background-image: url(http://127.0.0.1:5050/img/indexCarousel/top-kv-11.jpg); } }

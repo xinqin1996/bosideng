@@ -11,16 +11,22 @@ import Lady from './views/Lady'
 import ShoppingCar from './views/ShoppingCar'
 import NotFound from './views/NotFound'
 import select from './views/select'
+import carousel from './components/Carousel'
+import Header from './components/Header'
+// import fixed from './views/fixed' 
 
 Vue.use(Router)
 
 export default new Router({
   routes: [
     {path:'/hello',component:HelloContainer},
+    {path:'/header',component:Header},
     {path:'/',component:Index},
     {path:'/lady',component:Lady},
     {path:'/shoppingCar',component:ShoppingCar},
     {path:'/select',component:select},
+    {path:'/carousel',component:carousel},
+    // {path:'/fixed',component:fixed},
     {path:'*',component:NotFound},
     
   ]

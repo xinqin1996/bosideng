@@ -12,4 +12,12 @@ router.get("/v1/animation",(req,res)=>{
   })
 })
 
+router.get("/v1/header_carousel",(req,res)=>{
+  var sql="SELECT * FROM bsd_index_header_carousel";
+  pool.query(sql,(err,result)=>{
+    if(err) throw err;
+    res.send({code:1,msg:"查询成功",data:result});
+  })
+})
+
 module.exports=router;

@@ -39,7 +39,7 @@ CREATE TABLE bsd_index_animation(
 /**首页头部轮播图**/
 CREATE TABLE bsd_index_header_carousel(
   id INT PRIMARY KEY AUTO_INCREMENT,
-  lg VARCHAR(128),
+  lg VARCHAR(128)
   md VARCHAR(128)
 );
 

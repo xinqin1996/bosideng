@@ -76,6 +76,8 @@ Vue.component("my-header",MyHeader);
 //全局组件 NavLogin
 import NavLogin from "./components/NavLogin"
 Vue.component("nav-login",NavLogin);
+import carousel from "./components/Carousel"
+Vue.component("carousel",carousel);
 
 Vue.config.productionTip = false
 
